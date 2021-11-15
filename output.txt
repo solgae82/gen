@@ -1,22 +1,8 @@
 userId
-frtNm
-abcAd
-bbcDd
-dddUs
-apPin
-comIp
-regDt
 
 --------------------------------
 SELECT 
 	USER_ID
-	,FRT_NM
-	,ABC_AD
-	,BBC_DD
-	,DDD_US
-	,AP_PIN
-	,COM_IP
-	,REG_DT
 
 FROM 
 	USERS
@@ -26,23 +12,9 @@ WHERE
 INSERT INTO USERS
 (
 	USER_ID
-	,FRT_NM
-	,ABC_AD
-	,BBC_DD
-	,DDD_US
-	,AP_PIN
-	,COM_IP
-	,REG_DT
 
 )VALUES(
 	#{userId}
-	,#{frtNm}
-	,#{abcAd}
-	,#{bbcDd}
-	,#{dddUs}
-	,#{apPin}
-	,#{comIp}
-	,#{regDt}
 
 )
 --------------------------------
@@ -50,37 +22,16 @@ INSERT INTO USERS
 (
 	<trim prefixOverrides=",">
 		<if test="userId != null and !userId.equals('')">,USER_ID</if>
-		<if test="frtNm != null and !frtNm.equals('')">,FRT_NM</if>
-		<if test="abcAd != null and !abcAd.equals('')">,ABC_AD</if>
-		<if test="bbcDd != null and !bbcDd.equals('')">,BBC_DD</if>
-		<if test="dddUs != null and !dddUs.equals('')">,DDD_US</if>
-		<if test="apPin != null and !apPin.equals('')">,AP_PIN</if>
-		<if test="comIp != null and !comIp.equals('')">,COM_IP</if>
-		<if test="regDt != null and !regDt.equals('')">,REG_DT</if>
 	</trim>
 )VALUES(
 	<trim prefixOverrides=",">
 		<if test="userId != null and !userId.equals('')">,#{userId}</if>
-		<if test="frtNm != null and !frtNm.equals('')">,#{frtNm}</if>
-		<if test="abcAd != null and !abcAd.equals('')">,#{abcAd}</if>
-		<if test="bbcDd != null and !bbcDd.equals('')">,#{bbcDd}</if>
-		<if test="dddUs != null and !dddUs.equals('')">,#{dddUs}</if>
-		<if test="apPin != null and !apPin.equals('')">,#{apPin}</if>
-		<if test="comIp != null and !comIp.equals('')">,#{comIp}</if>
-		<if test="regDt != null and !regDt.equals('')">,#{regDt}</if>
 	</trim>
 )
 --------------------------------
 UPDATE USERS SET
 (
 	USER_ID=#{userId}
-	,FRT_NM=#{frtNm}
-	,ABC_AD=#{abcAd}
-	,BBC_DD=#{bbcDd}
-	,DDD_US=#{dddUs}
-	,AP_PIN=#{apPin}
-	,COM_IP=#{comIp}
-	,REG_DT=#{regDt}
 
 )
 WHERE
@@ -90,13 +41,6 @@ UPDATE USERS SET
 (
 	<trim prefixOverrides=",">
 		<if test="userId != null and !userId.equals('')">,USER_ID=#{userId}</if>
-		<if test="frtNm != null and !frtNm.equals('')">,FRT_NM=#{frtNm}</if>
-		<if test="abcAd != null and !abcAd.equals('')">,ABC_AD=#{abcAd}</if>
-		<if test="bbcDd != null and !bbcDd.equals('')">,BBC_DD=#{bbcDd}</if>
-		<if test="dddUs != null and !dddUs.equals('')">,DDD_US=#{dddUs}</if>
-		<if test="apPin != null and !apPin.equals('')">,AP_PIN=#{apPin}</if>
-		<if test="comIp != null and !comIp.equals('')">,COM_IP=#{comIp}</if>
-		<if test="regDt != null and !regDt.equals('')">,REG_DT=#{regDt}</if>
 	</trim>
 )
 WHERE
@@ -108,22 +52,8 @@ WHERE
 --------------------------------
 <resultMap id="" type="">
 	<resultMap id="userId" column="USER_ID" />
-	<resultMap property="frtNm" column="FRT_NM" />
-	<resultMap property="abcAd" column="ABC_AD" />
-	<resultMap property="bbcDd" column="BBC_DD" />
-	<resultMap property="dddUs" column="DDD_US" />
-	<resultMap property="apPin" column="AP_PIN" />
-	<resultMap property="comIp" column="COM_IP" />
-	<resultMap property="regDt" column="REG_DT" />
 </resultMap>
 
 --------------------------------
 String userId = "";
-String frtNm = "";
-String abcAd = "";
-String bbcDd = "";
-String dddUs = "";
-String apPin = "";
-String comIp = "";
-String regDt = "";
 
