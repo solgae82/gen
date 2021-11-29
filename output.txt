@@ -1,8 +1,10 @@
 userId
+userNm
 
 --------------------------------
 SELECT 
 	USER_ID
+	,USER_NM
 
 FROM 
 	USERS
@@ -12,9 +14,11 @@ WHERE
 INSERT INTO USERS
 (
 	USER_ID
+	,USER_NM
 
 )VALUES(
 	#{userId}
+	,#{userNm}
 
 )
 --------------------------------
@@ -22,27 +26,31 @@ INSERT INTO USERS
 (
 	<trim prefixOverrides=",">
 		<if test="userId != null and !userId.equals('')">,USER_ID</if>
+		<if test="userNm != null and !userNm.equals('')">,USER_NM</if>
 	</trim>
 )VALUES(
 	<trim prefixOverrides=",">
 		<if test="userId != null and !userId.equals('')">,#{userId}</if>
+		<if test="userNm != null and !userNm.equals('')">,#{userNm}</if>
 	</trim>
 )
 --------------------------------
 UPDATE USERS SET
-(
-	USER_ID=#{userId}
 
-)
+	USER_ID=#{userId}
+	,USER_NM=#{userNm}
+
+
 WHERE
 	USER_ID=#{userId}
 --------------------------------
 UPDATE USERS SET
-(
+
 	<trim prefixOverrides=",">
 		<if test="userId != null and !userId.equals('')">,USER_ID=#{userId}</if>
+		<if test="userNm != null and !userNm.equals('')">,USER_NM=#{userNm}</if>
 	</trim>
-)
+
 WHERE
 	USER_ID=#{userId}
 --------------------------------
@@ -52,8 +60,10 @@ WHERE
 --------------------------------
 <resultMap id="" type="">
 	<resultMap id="userId" column="USER_ID" />
+	<resultMap property="userNm" column="USER_NM" />
 </resultMap>
 
 --------------------------------
 String userId = "";
+String userNm = "";
 
