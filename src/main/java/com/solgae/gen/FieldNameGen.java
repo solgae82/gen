@@ -487,11 +487,11 @@ public class FieldNameGen {
 			cFieldNm = cList.get(i);
 			sb.append(tabWord);
 			if(i==0) {
-				sb.append("<resultMap id=\"");
+				sb.append("<id column=\"");
 			}else {
-				sb.append("<resultMap property=\"");
+				sb.append("<result column=\"");
 			}
-			sb.append(cFieldNm);sb.append("\" column=\"");sb.append(fieldNm);sb.append("\" />");
+			sb.append(fieldNm);sb.append("\" jdbcType=\"VARCHAR\" property=\"");sb.append(cFieldNm);sb.append("\" />");
 			sb.append(newLine);
 			i++;
 		}

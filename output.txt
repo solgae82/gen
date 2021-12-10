@@ -1,69 +1,119 @@
+id
 userId
-userNm
+cate
+sbScription
+description
+regDate
+upDate
 
 --------------------------------
 SELECT 
-	USER_ID
-	,USER_NM
+	ID
+	,USER_ID
+	,CATE
+	,SB_SCRIPTION
+	,DESCRIPTION
+	,REG_DATE
+	,UP_DATE
 
 FROM 
 	USERS
 WHERE
-	USER_ID=#{userId}
+	ID=#{id}
 --------------------------------
 INSERT INTO USERS
 (
-	USER_ID
-	,USER_NM
+	ID
+	,USER_ID
+	,CATE
+	,SB_SCRIPTION
+	,DESCRIPTION
+	,REG_DATE
+	,UP_DATE
 
 )VALUES(
-	#{userId}
-	,#{userNm}
+	#{id}
+	,#{userId}
+	,#{cate}
+	,#{sbScription}
+	,#{description}
+	,#{regDate}
+	,#{upDate}
 
 )
 --------------------------------
 INSERT INTO USERS
 (
 	<trim prefixOverrides=",">
+		<if test="id != null and !id.equals('')">,ID</if>
 		<if test="userId != null and !userId.equals('')">,USER_ID</if>
-		<if test="userNm != null and !userNm.equals('')">,USER_NM</if>
+		<if test="cate != null and !cate.equals('')">,CATE</if>
+		<if test="sbScription != null and !sbScription.equals('')">,SB_SCRIPTION</if>
+		<if test="description != null and !description.equals('')">,DESCRIPTION</if>
+		<if test="regDate != null and !regDate.equals('')">,REG_DATE</if>
+		<if test="upDate != null and !upDate.equals('')">,UP_DATE</if>
 	</trim>
 )VALUES(
 	<trim prefixOverrides=",">
+		<if test="id != null and !id.equals('')">,#{id}</if>
 		<if test="userId != null and !userId.equals('')">,#{userId}</if>
-		<if test="userNm != null and !userNm.equals('')">,#{userNm}</if>
+		<if test="cate != null and !cate.equals('')">,#{cate}</if>
+		<if test="sbScription != null and !sbScription.equals('')">,#{sbScription}</if>
+		<if test="description != null and !description.equals('')">,#{description}</if>
+		<if test="regDate != null and !regDate.equals('')">,#{regDate}</if>
+		<if test="upDate != null and !upDate.equals('')">,#{upDate}</if>
 	</trim>
 )
 --------------------------------
 UPDATE USERS SET
 
-	USER_ID=#{userId}
-	,USER_NM=#{userNm}
+	ID=#{id}
+	,USER_ID=#{userId}
+	,CATE=#{cate}
+	,SB_SCRIPTION=#{sbScription}
+	,DESCRIPTION=#{description}
+	,REG_DATE=#{regDate}
+	,UP_DATE=#{upDate}
 
 
 WHERE
-	USER_ID=#{userId}
+	ID=#{id}
 --------------------------------
 UPDATE USERS SET
 
 	<trim prefixOverrides=",">
+		<if test="id != null and !id.equals('')">,ID=#{id}</if>
 		<if test="userId != null and !userId.equals('')">,USER_ID=#{userId}</if>
-		<if test="userNm != null and !userNm.equals('')">,USER_NM=#{userNm}</if>
+		<if test="cate != null and !cate.equals('')">,CATE=#{cate}</if>
+		<if test="sbScription != null and !sbScription.equals('')">,SB_SCRIPTION=#{sbScription}</if>
+		<if test="description != null and !description.equals('')">,DESCRIPTION=#{description}</if>
+		<if test="regDate != null and !regDate.equals('')">,REG_DATE=#{regDate}</if>
+		<if test="upDate != null and !upDate.equals('')">,UP_DATE=#{upDate}</if>
 	</trim>
 
 WHERE
-	USER_ID=#{userId}
+	ID=#{id}
 --------------------------------
 DELETE FROM USERS
 WHERE
-	USER_ID=#{userId}
+	ID=#{id}
 --------------------------------
 <resultMap id="" type="">
-	<resultMap id="userId" column="USER_ID" />
-	<resultMap property="userNm" column="USER_NM" />
+	<id column="ID" jdbcType="VARCHAR" property="id" />
+	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+	<result column="CATE" jdbcType="VARCHAR" property="cate" />
+	<result column="SB_SCRIPTION" jdbcType="VARCHAR" property="sbScription" />
+	<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+	<result column="REG_DATE" jdbcType="VARCHAR" property="regDate" />
+	<result column="UP_DATE" jdbcType="VARCHAR" property="upDate" />
 </resultMap>
 
 --------------------------------
+String id = "";
 String userId = "";
-String userNm = "";
+String cate = "";
+String sbScription = "";
+String description = "";
+String regDate = "";
+String upDate = "";
 
