@@ -10,10 +10,10 @@ import java.util.List;
 
 public class Generator {
 
-	public static void generate() {
+	public static void generate(String tName) {
 		String inputFile = "input.txt"; //입력파일
     	String outputFile = "output.txt"; //출력파일
-    	String tableName = "USERS"; //테이블명
+    	String tableName = tName; //테이블명
     	BufferedReader br = null;
     	BufferedWriter bw  = null;
     	List<String> list = null;
@@ -22,6 +22,10 @@ public class Generator {
     	
     	File file = null;
     	
+    	if(tableName == null || "".equals(tableName)) {
+    		System.out.println("테이블명을 넣어주세요");
+    		return;
+    	}
     	//파일읽기
     	try {
     		

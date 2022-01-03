@@ -9,10 +9,11 @@ public class FieldNameGen {
 	public static String delimeter = "_";	//필드명 연결 문자
 	public static String tabWord = "	"; //탭 띄어쓰기
 	public static String newLine = System.getProperty("line.separator"); //개행문자
-	public static String tableName = "";
+	public static String tableName = "";	//테이블이름넣기
 	public static boolean preComma = true; // true: ',userId' , false : 'userId,' 
 	
 
+	
 	public static String getDelimeter() {
 		return delimeter;
 	}
