@@ -513,7 +513,7 @@ public class FieldNameGen {
 				
 		for(String cFieldNm : cList) {
 			
-			sb.append("String ");sb.append(cFieldNm);sb.append(" = \"\";");
+			sb.append("private String ");sb.append(cFieldNm);sb.append(" = \"\";");
 			sb.append(newLine);
 			
 		}

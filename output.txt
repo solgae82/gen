@@ -1,129 +1,119 @@
-pstgId
-ttl
-se
-cn
-regDt
-rgtrId
-mdfcnDt
-mdfrId
+id
+userId
+cate
+sbScription
+description
+regDate
+upDate
 
 --------------------------------
 SELECT 
-	PSTG_ID
-	,TTL
-	,SE
-	,CN
-	,REG_DT
-	,RGTR_ID
-	,MDFCN_DT
-	,MDFR_ID
+	ID
+	,USER_ID
+	,CATE
+	,SB_SCRIPTION
+	,DESCRIPTION
+	,REG_DATE
+	,UP_DATE
 
 FROM 
-	USERBBS
+	BBS
 WHERE
-	PSTG_ID=#{pstgId}
+	ID=#{id}
 --------------------------------
-INSERT INTO USERBBS
+INSERT INTO BBS
 (
-	PSTG_ID
-	,TTL
-	,SE
-	,CN
-	,REG_DT
-	,RGTR_ID
-	,MDFCN_DT
-	,MDFR_ID
+	ID
+	,USER_ID
+	,CATE
+	,SB_SCRIPTION
+	,DESCRIPTION
+	,REG_DATE
+	,UP_DATE
 
 )VALUES(
-	#{pstgId}
-	,#{ttl}
-	,#{se}
-	,#{cn}
-	,#{regDt}
-	,#{rgtrId}
-	,#{mdfcnDt}
-	,#{mdfrId}
+	#{id}
+	,#{userId}
+	,#{cate}
+	,#{sbScription}
+	,#{description}
+	,#{regDate}
+	,#{upDate}
 
 )
 --------------------------------
-INSERT INTO USERBBS
+INSERT INTO BBS
 (
 	<trim prefixOverrides=",">
-		<if test="pstgId != null and !pstgId.equals('')">,PSTG_ID</if>
-		<if test="ttl != null and !ttl.equals('')">,TTL</if>
-		<if test="se != null and !se.equals('')">,SE</if>
-		<if test="cn != null and !cn.equals('')">,CN</if>
-		<if test="regDt != null and !regDt.equals('')">,REG_DT</if>
-		<if test="rgtrId != null and !rgtrId.equals('')">,RGTR_ID</if>
-		<if test="mdfcnDt != null and !mdfcnDt.equals('')">,MDFCN_DT</if>
-		<if test="mdfrId != null and !mdfrId.equals('')">,MDFR_ID</if>
+		<if test="id != null and !id.equals('')">,ID</if>
+		<if test="userId != null and !userId.equals('')">,USER_ID</if>
+		<if test="cate != null and !cate.equals('')">,CATE</if>
+		<if test="sbScription != null and !sbScription.equals('')">,SB_SCRIPTION</if>
+		<if test="description != null and !description.equals('')">,DESCRIPTION</if>
+		<if test="regDate != null and !regDate.equals('')">,REG_DATE</if>
+		<if test="upDate != null and !upDate.equals('')">,UP_DATE</if>
 	</trim>
 )VALUES(
 	<trim prefixOverrides=",">
-		<if test="pstgId != null and !pstgId.equals('')">,#{pstgId}</if>
-		<if test="ttl != null and !ttl.equals('')">,#{ttl}</if>
-		<if test="se != null and !se.equals('')">,#{se}</if>
-		<if test="cn != null and !cn.equals('')">,#{cn}</if>
-		<if test="regDt != null and !regDt.equals('')">,#{regDt}</if>
-		<if test="rgtrId != null and !rgtrId.equals('')">,#{rgtrId}</if>
-		<if test="mdfcnDt != null and !mdfcnDt.equals('')">,#{mdfcnDt}</if>
-		<if test="mdfrId != null and !mdfrId.equals('')">,#{mdfrId}</if>
+		<if test="id != null and !id.equals('')">,#{id}</if>
+		<if test="userId != null and !userId.equals('')">,#{userId}</if>
+		<if test="cate != null and !cate.equals('')">,#{cate}</if>
+		<if test="sbScription != null and !sbScription.equals('')">,#{sbScription}</if>
+		<if test="description != null and !description.equals('')">,#{description}</if>
+		<if test="regDate != null and !regDate.equals('')">,#{regDate}</if>
+		<if test="upDate != null and !upDate.equals('')">,#{upDate}</if>
 	</trim>
 )
 --------------------------------
-UPDATE USERBBS SET
+UPDATE BBS SET
 
-	PSTG_ID=#{pstgId}
-	,TTL=#{ttl}
-	,SE=#{se}
-	,CN=#{cn}
-	,REG_DT=#{regDt}
-	,RGTR_ID=#{rgtrId}
-	,MDFCN_DT=#{mdfcnDt}
-	,MDFR_ID=#{mdfrId}
+	ID=#{id}
+	,USER_ID=#{userId}
+	,CATE=#{cate}
+	,SB_SCRIPTION=#{sbScription}
+	,DESCRIPTION=#{description}
+	,REG_DATE=#{regDate}
+	,UP_DATE=#{upDate}
 
 
 WHERE
-	PSTG_ID=#{pstgId}
+	ID=#{id}
 --------------------------------
-UPDATE USERBBS SET
+UPDATE BBS SET
 
 	<trim prefixOverrides=",">
-		<if test="pstgId != null and !pstgId.equals('')">,PSTG_ID=#{pstgId}</if>
-		<if test="ttl != null and !ttl.equals('')">,TTL=#{ttl}</if>
-		<if test="se != null and !se.equals('')">,SE=#{se}</if>
-		<if test="cn != null and !cn.equals('')">,CN=#{cn}</if>
-		<if test="regDt != null and !regDt.equals('')">,REG_DT=#{regDt}</if>
-		<if test="rgtrId != null and !rgtrId.equals('')">,RGTR_ID=#{rgtrId}</if>
-		<if test="mdfcnDt != null and !mdfcnDt.equals('')">,MDFCN_DT=#{mdfcnDt}</if>
-		<if test="mdfrId != null and !mdfrId.equals('')">,MDFR_ID=#{mdfrId}</if>
+		<if test="id != null and !id.equals('')">,ID=#{id}</if>
+		<if test="userId != null and !userId.equals('')">,USER_ID=#{userId}</if>
+		<if test="cate != null and !cate.equals('')">,CATE=#{cate}</if>
+		<if test="sbScription != null and !sbScription.equals('')">,SB_SCRIPTION=#{sbScription}</if>
+		<if test="description != null and !description.equals('')">,DESCRIPTION=#{description}</if>
+		<if test="regDate != null and !regDate.equals('')">,REG_DATE=#{regDate}</if>
+		<if test="upDate != null and !upDate.equals('')">,UP_DATE=#{upDate}</if>
 	</trim>
 
 WHERE
-	PSTG_ID=#{pstgId}
+	ID=#{id}
 --------------------------------
-DELETE FROM USERBBS
+DELETE FROM BBS
 WHERE
-	PSTG_ID=#{pstgId}
+	ID=#{id}
 --------------------------------
 <resultMap id="" type="">
-	<id column="PSTG_ID" jdbcType="VARCHAR" property="pstgId" />
-	<result column="TTL" jdbcType="VARCHAR" property="ttl" />
-	<result column="SE" jdbcType="VARCHAR" property="se" />
-	<result column="CN" jdbcType="VARCHAR" property="cn" />
-	<result column="REG_DT" jdbcType="VARCHAR" property="regDt" />
-	<result column="RGTR_ID" jdbcType="VARCHAR" property="rgtrId" />
-	<result column="MDFCN_DT" jdbcType="VARCHAR" property="mdfcnDt" />
-	<result column="MDFR_ID" jdbcType="VARCHAR" property="mdfrId" />
+	<id column="ID" jdbcType="VARCHAR" property="id" />
+	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+	<result column="CATE" jdbcType="VARCHAR" property="cate" />
+	<result column="SB_SCRIPTION" jdbcType="VARCHAR" property="sbScription" />
+	<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+	<result column="REG_DATE" jdbcType="VARCHAR" property="regDate" />
+	<result column="UP_DATE" jdbcType="VARCHAR" property="upDate" />
 </resultMap>
 
 --------------------------------
-String pstgId = "";
-String ttl = "";
-String se = "";
-String cn = "";
-String regDt = "";
-String rgtrId = "";
-String mdfcnDt = "";
-String mdfrId = "";
+private String id = "";
+private String userId = "";
+private String cate = "";
+private String sbScription = "";
+private String description = "";
+private String regDate = "";
+private String upDate = "";
 

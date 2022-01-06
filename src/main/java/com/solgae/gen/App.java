@@ -9,7 +9,7 @@ public class App
     public static void main( String[] args )
     {
         //테이블명을 인수로 넣어준다.
-        Generator.generate("USERBBS");
+        Generator.generate("BBS");
     }
     
     
