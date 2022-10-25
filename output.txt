@@ -1,309 +1,129 @@
 id
-createdOn
-modifiedOn
-title
-senderAddr
-receiverAddr
-receiverIdn
-fileCount
-linkId
-docId
-docNo
-recvPlatformId
-sendTime
-receiveTime
-readTime
-deleteTime
-sendStatus
-receiveStatus
-readStatus
 userId
-docTypeId
-retryMaxCount
-retryDoneCount
-errorCode
-errorMsg
-useLink
+cate
+sbScription
+description
+regDate
+upDate
+
 
 --------------------------------
 SELECT 
-	id
-	,created_on
-	,modified_on
-	,title
-	,sender_addr
-	,receiver_addr
-	,receiver_idn
-	,file_count
-	,link_id
-	,doc_id
-	,doc_no
-	,recv_platform_id
-	,send_time
-	,receive_time
-	,read_time
-	,delete_time
-	,send_status
-	,receive_status
-	,read_status
-	,user_id
-	,doc_type_id
-	,retry_max_count
-	,retry_done_count
-	,error_code
-	,error_msg
-	,use_link
+	ID
+	,USER_ID
+	,CATE
+	,SB_SCRIPTION
+	,DESCRIPTION
+	,REG_DATE
+	,UP_DATE
+	,
 
 FROM 
 	BF_MCA_SND_DOC
 WHERE
-	id=#{id}
+	ID=#{id}
 --------------------------------
 INSERT INTO BF_MCA_SND_DOC
 (
-	id
-	,created_on
-	,modified_on
-	,title
-	,sender_addr
-	,receiver_addr
-	,receiver_idn
-	,file_count
-	,link_id
-	,doc_id
-	,doc_no
-	,recv_platform_id
-	,send_time
-	,receive_time
-	,read_time
-	,delete_time
-	,send_status
-	,receive_status
-	,read_status
-	,user_id
-	,doc_type_id
-	,retry_max_count
-	,retry_done_count
-	,error_code
-	,error_msg
-	,use_link
+	ID
+	,USER_ID
+	,CATE
+	,SB_SCRIPTION
+	,DESCRIPTION
+	,REG_DATE
+	,UP_DATE
+	,
 
 )VALUES(
 	#{id}
-	,#{createdOn}
-	,#{modifiedOn}
-	,#{title}
-	,#{senderAddr}
-	,#{receiverAddr}
-	,#{receiverIdn}
-	,#{fileCount}
-	,#{linkId}
-	,#{docId}
-	,#{docNo}
-	,#{recvPlatformId}
-	,#{sendTime}
-	,#{receiveTime}
-	,#{readTime}
-	,#{deleteTime}
-	,#{sendStatus}
-	,#{receiveStatus}
-	,#{readStatus}
 	,#{userId}
-	,#{docTypeId}
-	,#{retryMaxCount}
-	,#{retryDoneCount}
-	,#{errorCode}
-	,#{errorMsg}
-	,#{useLink}
+	,#{cate}
+	,#{sbScription}
+	,#{description}
+	,#{regDate}
+	,#{upDate}
+	,#{}
 
 )
 --------------------------------
 INSERT INTO BF_MCA_SND_DOC
 (
 	<trim prefixOverrides=",">
-		<if test="id != null and !id.equals('')">,id</if>
-		<if test="createdOn != null and !createdOn.equals('')">,created_on</if>
-		<if test="modifiedOn != null and !modifiedOn.equals('')">,modified_on</if>
-		<if test="title != null and !title.equals('')">,title</if>
-		<if test="senderAddr != null and !senderAddr.equals('')">,sender_addr</if>
-		<if test="receiverAddr != null and !receiverAddr.equals('')">,receiver_addr</if>
-		<if test="receiverIdn != null and !receiverIdn.equals('')">,receiver_idn</if>
-		<if test="fileCount != null and !fileCount.equals('')">,file_count</if>
-		<if test="linkId != null and !linkId.equals('')">,link_id</if>
-		<if test="docId != null and !docId.equals('')">,doc_id</if>
-		<if test="docNo != null and !docNo.equals('')">,doc_no</if>
-		<if test="recvPlatformId != null and !recvPlatformId.equals('')">,recv_platform_id</if>
-		<if test="sendTime != null and !sendTime.equals('')">,send_time</if>
-		<if test="receiveTime != null and !receiveTime.equals('')">,receive_time</if>
-		<if test="readTime != null and !readTime.equals('')">,read_time</if>
-		<if test="deleteTime != null and !deleteTime.equals('')">,delete_time</if>
-		<if test="sendStatus != null and !sendStatus.equals('')">,send_status</if>
-		<if test="receiveStatus != null and !receiveStatus.equals('')">,receive_status</if>
-		<if test="readStatus != null and !readStatus.equals('')">,read_status</if>
-		<if test="userId != null and !userId.equals('')">,user_id</if>
-		<if test="docTypeId != null and !docTypeId.equals('')">,doc_type_id</if>
-		<if test="retryMaxCount != null and !retryMaxCount.equals('')">,retry_max_count</if>
-		<if test="retryDoneCount != null and !retryDoneCount.equals('')">,retry_done_count</if>
-		<if test="errorCode != null and !errorCode.equals('')">,error_code</if>
-		<if test="errorMsg != null and !errorMsg.equals('')">,error_msg</if>
-		<if test="useLink != null and !useLink.equals('')">,use_link</if>
+		<if test="id != null and !id.equals('')">,ID</if>
+		<if test="userId != null and !userId.equals('')">,USER_ID</if>
+		<if test="cate != null and !cate.equals('')">,CATE</if>
+		<if test="sbScription != null and !sbScription.equals('')">,SB_SCRIPTION</if>
+		<if test="description != null and !description.equals('')">,DESCRIPTION</if>
+		<if test="regDate != null and !regDate.equals('')">,REG_DATE</if>
+		<if test="upDate != null and !upDate.equals('')">,UP_DATE</if>
+		<if test=" != null and !.equals('')">,</if>
 	</trim>
 )VALUES(
 	<trim prefixOverrides=",">
 		<if test="id != null and !id.equals('')">,#{id}</if>
-		<if test="createdOn != null and !createdOn.equals('')">,#{createdOn}</if>
-		<if test="modifiedOn != null and !modifiedOn.equals('')">,#{modifiedOn}</if>
-		<if test="title != null and !title.equals('')">,#{title}</if>
-		<if test="senderAddr != null and !senderAddr.equals('')">,#{senderAddr}</if>
-		<if test="receiverAddr != null and !receiverAddr.equals('')">,#{receiverAddr}</if>
-		<if test="receiverIdn != null and !receiverIdn.equals('')">,#{receiverIdn}</if>
-		<if test="fileCount != null and !fileCount.equals('')">,#{fileCount}</if>
-		<if test="linkId != null and !linkId.equals('')">,#{linkId}</if>
-		<if test="docId != null and !docId.equals('')">,#{docId}</if>
-		<if test="docNo != null and !docNo.equals('')">,#{docNo}</if>
-		<if test="recvPlatformId != null and !recvPlatformId.equals('')">,#{recvPlatformId}</if>
-		<if test="sendTime != null and !sendTime.equals('')">,#{sendTime}</if>
-		<if test="receiveTime != null and !receiveTime.equals('')">,#{receiveTime}</if>
-		<if test="readTime != null and !readTime.equals('')">,#{readTime}</if>
-		<if test="deleteTime != null and !deleteTime.equals('')">,#{deleteTime}</if>
-		<if test="sendStatus != null and !sendStatus.equals('')">,#{sendStatus}</if>
-		<if test="receiveStatus != null and !receiveStatus.equals('')">,#{receiveStatus}</if>
-		<if test="readStatus != null and !readStatus.equals('')">,#{readStatus}</if>
 		<if test="userId != null and !userId.equals('')">,#{userId}</if>
-		<if test="docTypeId != null and !docTypeId.equals('')">,#{docTypeId}</if>
-		<if test="retryMaxCount != null and !retryMaxCount.equals('')">,#{retryMaxCount}</if>
-		<if test="retryDoneCount != null and !retryDoneCount.equals('')">,#{retryDoneCount}</if>
-		<if test="errorCode != null and !errorCode.equals('')">,#{errorCode}</if>
-		<if test="errorMsg != null and !errorMsg.equals('')">,#{errorMsg}</if>
-		<if test="useLink != null and !useLink.equals('')">,#{useLink}</if>
+		<if test="cate != null and !cate.equals('')">,#{cate}</if>
+		<if test="sbScription != null and !sbScription.equals('')">,#{sbScription}</if>
+		<if test="description != null and !description.equals('')">,#{description}</if>
+		<if test="regDate != null and !regDate.equals('')">,#{regDate}</if>
+		<if test="upDate != null and !upDate.equals('')">,#{upDate}</if>
+		<if test=" != null and !.equals('')">,#{}</if>
 	</trim>
 )
 --------------------------------
 UPDATE BF_MCA_SND_DOC SET
 
-	id=#{id}
-	,created_on=#{createdOn}
-	,modified_on=#{modifiedOn}
-	,title=#{title}
-	,sender_addr=#{senderAddr}
-	,receiver_addr=#{receiverAddr}
-	,receiver_idn=#{receiverIdn}
-	,file_count=#{fileCount}
-	,link_id=#{linkId}
-	,doc_id=#{docId}
-	,doc_no=#{docNo}
-	,recv_platform_id=#{recvPlatformId}
-	,send_time=#{sendTime}
-	,receive_time=#{receiveTime}
-	,read_time=#{readTime}
-	,delete_time=#{deleteTime}
-	,send_status=#{sendStatus}
-	,receive_status=#{receiveStatus}
-	,read_status=#{readStatus}
-	,user_id=#{userId}
-	,doc_type_id=#{docTypeId}
-	,retry_max_count=#{retryMaxCount}
-	,retry_done_count=#{retryDoneCount}
-	,error_code=#{errorCode}
-	,error_msg=#{errorMsg}
-	,use_link=#{useLink}
+	ID=#{id}
+	,USER_ID=#{userId}
+	,CATE=#{cate}
+	,SB_SCRIPTION=#{sbScription}
+	,DESCRIPTION=#{description}
+	,REG_DATE=#{regDate}
+	,UP_DATE=#{upDate}
+	,=#{}
 
 
 WHERE
-	id=#{id}
+	ID=#{id}
 --------------------------------
 UPDATE BF_MCA_SND_DOC SET
 
 	<trim prefixOverrides=",">
-		<if test="id != null and !id.equals('')">,id=#{id}</if>
-		<if test="createdOn != null and !createdOn.equals('')">,created_on=#{createdOn}</if>
-		<if test="modifiedOn != null and !modifiedOn.equals('')">,modified_on=#{modifiedOn}</if>
-		<if test="title != null and !title.equals('')">,title=#{title}</if>
-		<if test="senderAddr != null and !senderAddr.equals('')">,sender_addr=#{senderAddr}</if>
-		<if test="receiverAddr != null and !receiverAddr.equals('')">,receiver_addr=#{receiverAddr}</if>
-		<if test="receiverIdn != null and !receiverIdn.equals('')">,receiver_idn=#{receiverIdn}</if>
-		<if test="fileCount != null and !fileCount.equals('')">,file_count=#{fileCount}</if>
-		<if test="linkId != null and !linkId.equals('')">,link_id=#{linkId}</if>
-		<if test="docId != null and !docId.equals('')">,doc_id=#{docId}</if>
-		<if test="docNo != null and !docNo.equals('')">,doc_no=#{docNo}</if>
-		<if test="recvPlatformId != null and !recvPlatformId.equals('')">,recv_platform_id=#{recvPlatformId}</if>
-		<if test="sendTime != null and !sendTime.equals('')">,send_time=#{sendTime}</if>
-		<if test="receiveTime != null and !receiveTime.equals('')">,receive_time=#{receiveTime}</if>
-		<if test="readTime != null and !readTime.equals('')">,read_time=#{readTime}</if>
-		<if test="deleteTime != null and !deleteTime.equals('')">,delete_time=#{deleteTime}</if>
-		<if test="sendStatus != null and !sendStatus.equals('')">,send_status=#{sendStatus}</if>
-		<if test="receiveStatus != null and !receiveStatus.equals('')">,receive_status=#{receiveStatus}</if>
-		<if test="readStatus != null and !readStatus.equals('')">,read_status=#{readStatus}</if>
-		<if test="userId != null and !userId.equals('')">,user_id=#{userId}</if>
-		<if test="docTypeId != null and !docTypeId.equals('')">,doc_type_id=#{docTypeId}</if>
-		<if test="retryMaxCount != null and !retryMaxCount.equals('')">,retry_max_count=#{retryMaxCount}</if>
-		<if test="retryDoneCount != null and !retryDoneCount.equals('')">,retry_done_count=#{retryDoneCount}</if>
-		<if test="errorCode != null and !errorCode.equals('')">,error_code=#{errorCode}</if>
-		<if test="errorMsg != null and !errorMsg.equals('')">,error_msg=#{errorMsg}</if>
-		<if test="useLink != null and !useLink.equals('')">,use_link=#{useLink}</if>
+		<if test="id != null and !id.equals('')">,ID=#{id}</if>
+		<if test="userId != null and !userId.equals('')">,USER_ID=#{userId}</if>
+		<if test="cate != null and !cate.equals('')">,CATE=#{cate}</if>
+		<if test="sbScription != null and !sbScription.equals('')">,SB_SCRIPTION=#{sbScription}</if>
+		<if test="description != null and !description.equals('')">,DESCRIPTION=#{description}</if>
+		<if test="regDate != null and !regDate.equals('')">,REG_DATE=#{regDate}</if>
+		<if test="upDate != null and !upDate.equals('')">,UP_DATE=#{upDate}</if>
+		<if test=" != null and !.equals('')">,=#{}</if>
 	</trim>
 
 WHERE
-	id=#{id}
+	ID=#{id}
 --------------------------------
 DELETE FROM BF_MCA_SND_DOC
 WHERE
-	id=#{id}
+	ID=#{id}
 --------------------------------
 <resultMap id="" type="">
-	<id column="id" jdbcType="VARCHAR" property="id" />
-	<result column="created_on" jdbcType="VARCHAR" property="createdOn" />
-	<result column="modified_on" jdbcType="VARCHAR" property="modifiedOn" />
-	<result column="title" jdbcType="VARCHAR" property="title" />
-	<result column="sender_addr" jdbcType="VARCHAR" property="senderAddr" />
-	<result column="receiver_addr" jdbcType="VARCHAR" property="receiverAddr" />
-	<result column="receiver_idn" jdbcType="VARCHAR" property="receiverIdn" />
-	<result column="file_count" jdbcType="VARCHAR" property="fileCount" />
-	<result column="link_id" jdbcType="VARCHAR" property="linkId" />
-	<result column="doc_id" jdbcType="VARCHAR" property="docId" />
-	<result column="doc_no" jdbcType="VARCHAR" property="docNo" />
-	<result column="recv_platform_id" jdbcType="VARCHAR" property="recvPlatformId" />
-	<result column="send_time" jdbcType="VARCHAR" property="sendTime" />
-	<result column="receive_time" jdbcType="VARCHAR" property="receiveTime" />
-	<result column="read_time" jdbcType="VARCHAR" property="readTime" />
-	<result column="delete_time" jdbcType="VARCHAR" property="deleteTime" />
-	<result column="send_status" jdbcType="VARCHAR" property="sendStatus" />
-	<result column="receive_status" jdbcType="VARCHAR" property="receiveStatus" />
-	<result column="read_status" jdbcType="VARCHAR" property="readStatus" />
-	<result column="user_id" jdbcType="VARCHAR" property="userId" />
-	<result column="doc_type_id" jdbcType="VARCHAR" property="docTypeId" />
-	<result column="retry_max_count" jdbcType="VARCHAR" property="retryMaxCount" />
-	<result column="retry_done_count" jdbcType="VARCHAR" property="retryDoneCount" />
-	<result column="error_code" jdbcType="VARCHAR" property="errorCode" />
-	<result column="error_msg" jdbcType="VARCHAR" property="errorMsg" />
-	<result column="use_link" jdbcType="VARCHAR" property="useLink" />
+	<id column="ID" jdbcType="VARCHAR" property="id" />
+	<result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+	<result column="CATE" jdbcType="VARCHAR" property="cate" />
+	<result column="SB_SCRIPTION" jdbcType="VARCHAR" property="sbScription" />
+	<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+	<result column="REG_DATE" jdbcType="VARCHAR" property="regDate" />
+	<result column="UP_DATE" jdbcType="VARCHAR" property="upDate" />
+	<result column="" jdbcType="VARCHAR" property="" />
 </resultMap>
 
 --------------------------------
 private String id = "";
-private String createdOn = "";
-private String modifiedOn = "";
-private String title = "";
-private String senderAddr = "";
-private String receiverAddr = "";
-private String receiverIdn = "";
-private String fileCount = "";
-private String linkId = "";
-private String docId = "";
-private String docNo = "";
-private String recvPlatformId = "";
-private String sendTime = "";
-private String receiveTime = "";
-private String readTime = "";
-private String deleteTime = "";
-private String sendStatus = "";
-private String receiveStatus = "";
-private String readStatus = "";
 private String userId = "";
-private String docTypeId = "";
-private String retryMaxCount = "";
-private String retryDoneCount = "";
-private String errorCode = "";
-private String errorMsg = "";
-private String useLink = "";
+private String cate = "";
+private String sbScription = "";
+private String description = "";
+private String regDate = "";
+private String upDate = "";
+private String  = "";
 
