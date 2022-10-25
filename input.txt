@@ -6,4 +6,5 @@ DESCRIPTION
 REG_DATE
 UP_DATE
 
-pick2
+pick2 
+AA
