@@ -6,5 +6,4 @@ DESCRIPTION
 REG_DATE
 UP_DATE
 
-pick2 
-AA
+notebook win
