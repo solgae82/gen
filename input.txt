@@ -6,5 +6,4 @@ DESCRIPTION
 REG_DATE
 UP_DATE
 
-desktop WIN
-
+desktop
