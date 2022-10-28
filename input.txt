@@ -6,4 +6,4 @@ DESCRIPTION
 REG_DATE
 UP_DATE
 
-notebook12
+desktop13
